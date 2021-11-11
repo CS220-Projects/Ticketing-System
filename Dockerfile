@@ -1,5 +1,5 @@
 FROM python:3.9
-MAINTAINER PeStory@clarku.edu
+MAINTAINER jrogerson@clarku.edu
 
 # Directories for the source code
 RUN mkdir -p /usr/src/django/djangoproject
