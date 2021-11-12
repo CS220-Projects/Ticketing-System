@@ -1,6 +1,7 @@
 import uuid
 
 from django.db import models
+from django.utils import timezone
 
 class Franchise(models.Model):
     franchiseID = models.UUIDField(primary_key = True, default = uuid.uuid4, editable = False)
@@ -33,8 +34,13 @@ class Item(models.Model):
     def __str__(self):
         return f"Item Name = {self.itemName} | Item Price = {self.itemPrice}"
 
-
-
+class Ticket(models.Model):
+    ticketID = models.UUIDField(primary_key = True, default = uuid.uuid4(), editable = False)
+    timeToFulfill = models.DecimalField(max_digits = 20, decimal_places = 2)
+    specialRequests = models.CharField(max_length = 500)
+    completedStatus = models.BooleanField(default = False)
+    orderDate = models.DateTimeField(auto_now_add = True, default = timezone.now())
+    tip = models.DecimalField(max_digits = 20, decimal_places = 2)
 
 
 class Staff(models.Model):
