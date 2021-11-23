@@ -95,6 +95,11 @@ docker compose exec django python manage.py migrate
 
 You can read more about [Django migrations here](https://docs.djangoproject.com/en/3.2/topics/migrations/).
 
+Add starter data that the applications needs via the following command:
+```
+docker compose exec django python manage.py loaddata add_restaurant_data.json
+```
+
 #### Dump
 
 To dump the SQL commands needed to recreate a database to file, run:
