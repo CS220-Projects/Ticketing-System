@@ -1,0 +1,352 @@
+[
+{
+    "model": "ticketing_system.staff",
+    "pk": 1,
+    "fields": {
+        "staffID": "55b96b61-7303-423f-9c11-6b03fca5fb7b",
+        "restaurantID": 1,
+        "franchiseID": "3654929b-3f47-4b72-83d7-72b36c4fd65f",
+        "staffName": "John Smith",
+        "staffStartDate": "2021-11-23T18:54:08.120Z",
+        "staffTenure": "5",
+        "staffGender": "M",
+        "staffSalary": "25000.00"
+    }
+},
+{
+    "model": "ticketing_system.staff",
+    "pk": 2,
+    "fields": {
+        "staffID": "b6650997-d95e-4ce2-8e1d-20392c19a13d",
+        "restaurantID": 10,
+        "franchiseID": "920709cd-8a23-4163-82d5-853d93ed2686",
+        "staffName": "John Doe",
+        "staffStartDate": "2021-11-23T18:54:47.481Z",
+        "staffTenure": "3",
+        "staffGender": "M",
+        "staffSalary": "15000.00"
+    }
+},
+{
+    "model": "ticketing_system.staff",
+    "pk": 3,
+    "fields": {
+        "staffID": "91cd4e87-e451-4a7d-a0c6-88e11762b25c",
+        "restaurantID": 8,
+        "franchiseID": "4fa9c437-13dc-40b2-9193-f6cc5120ce07",
+        "staffName": "Jane Doe",
+        "staffStartDate": "2021-11-23T18:55:45.548Z",
+        "staffTenure": "10",
+        "staffGender": "F",
+        "staffSalary": "40000.00"
+    }
+},
+{
+    "model": "ticketing_system.staff",
+    "pk": 4,
+    "fields": {
+        "staffID": "c32c3200-1f47-406a-b999-301bb8b9f1cc",
+        "restaurantID": 5,
+        "franchiseID": "c79cd52e-197e-40aa-8d06-efa037b6dc36",
+        "staffName": "Bill Johnston",
+        "staffStartDate": "2021-11-23T18:57:56.098Z",
+        "staffTenure": "2",
+        "staffGender": "M",
+        "staffSalary": "12000.00"
+    }
+},
+{
+    "model": "ticketing_system.staff",
+    "pk": 5,
+    "fields": {
+        "staffID": "68a54d85-bdd6-4264-8b31-12ace89fd8b3",
+        "restaurantID": 4,
+        "franchiseID": "432086d1-d0b4-45ec-ad85-50de451c362f",
+        "staffName": "Jill Jay",
+        "staffStartDate": "2021-11-23T18:58:48.768Z",
+        "staffTenure": "6",
+        "staffGender": "F",
+        "staffSalary": "35000.00"
+    }
+},
+{
+    "model": "ticketing_system.franchise",
+    "pk": "3654929b-3f47-4b72-83d7-72b36c4fd65f",
+    "fields": {
+        "franchiseName": "McDonald's",
+        "franchiseLocation": "Milwaukee"
+    }
+},
+{
+    "model": "ticketing_system.franchise",
+    "pk": "432086d1-d0b4-45ec-ad85-50de451c362f",
+    "fields": {
+        "franchiseName": "Wendy's",
+        "franchiseLocation": "Sparks"
+    }
+},
+{
+    "model": "ticketing_system.franchise",
+    "pk": "4fa9c437-13dc-40b2-9193-f6cc5120ce07",
+    "fields": {
+        "franchiseName": "Five Guys",
+        "franchiseLocation": "Memphis"
+    }
+},
+{
+    "model": "ticketing_system.franchise",
+    "pk": "920709cd-8a23-4163-82d5-853d93ed2686",
+    "fields": {
+        "franchiseName": "Wingstop",
+        "franchiseLocation": "Atlanta"
+    }
+},
+{
+    "model": "ticketing_system.franchise",
+    "pk": "c79cd52e-197e-40aa-8d06-efa037b6dc36",
+    "fields": {
+        "franchiseName": "Chick-fil-a",
+        "franchiseLocation": "Charlotte"
+    }
+},
+{
+    "model": "ticketing_system.item",
+    "pk": "01e7bb11-89b7-4504-8b90-19bab345f720",
+    "fields": {
+        "itemName": "Chips",
+        "itemPrice": "1.00"
+    }
+},
+{
+    "model": "ticketing_system.item",
+    "pk": "18a2000c-f80a-4b5a-885c-7cd08920b182",
+    "fields": {
+        "itemName": "Bagel",
+        "itemPrice": "3.00"
+    }
+},
+{
+    "model": "ticketing_system.item",
+    "pk": "29b178b2-e308-42b4-a183-c2175fc04faf",
+    "fields": {
+        "itemName": "Chicken Nuggets",
+        "itemPrice": "20.00"
+    }
+},
+{
+    "model": "ticketing_system.item",
+    "pk": "362e822e-2ea2-4a23-9c4f-0fc50ad57d42",
+    "fields": {
+        "itemName": "French Fries",
+        "itemPrice": "15.00"
+    }
+},
+{
+    "model": "ticketing_system.item",
+    "pk": "407ea305-fb4a-40e6-b6c0-32943bb140c5",
+    "fields": {
+        "itemName": "Ice Cream",
+        "itemPrice": "5.00"
+    }
+},
+{
+    "model": "ticketing_system.item",
+    "pk": "4629ed9a-7ec7-45b5-9f49-aa687c33acdc",
+    "fields": {
+        "itemName": "Cheeseburger",
+        "itemPrice": "15.00"
+    }
+},
+{
+    "model": "ticketing_system.item",
+    "pk": "4e63fa55-b6fe-43b3-ab8f-fb6a870b3477",
+    "fields": {
+        "itemName": "Burger",
+        "itemPrice": "10.00"
+    }
+},
+{
+    "model": "ticketing_system.item",
+    "pk": "561b2230-183c-426a-ba0f-9e68af2b6716",
+    "fields": {
+        "itemName": "Soda",
+        "itemPrice": "2.00"
+    }
+},
+{
+    "model": "ticketing_system.item",
+    "pk": "8275a9a0-ad76-4e12-8f5e-0e7fff975fda",
+    "fields": {
+        "itemName": "Fish Sandwich",
+        "itemPrice": "10.00"
+    }
+},
+{
+    "model": "ticketing_system.item",
+    "pk": "cc70b5b9-c26d-4bac-972c-850700e401ec",
+    "fields": {
+        "itemName": "Cheese",
+        "itemPrice": "10.00"
+    }
+},
+{
+    "model": "ticketing_system.item",
+    "pk": "d18484e4-e60b-41eb-be9f-a6da1a13ef08",
+    "fields": {
+        "itemName": "Chicken Sandwich",
+        "itemPrice": "10.00"
+    }
+},
+{
+    "model": "ticketing_system.item",
+    "pk": "e247da08-2503-4408-a369-c10854e6c2ff",
+    "fields": {
+        "itemName": "PB&J",
+        "itemPrice": "5.00"
+    }
+},
+{
+    "model": "ticketing_system.item",
+    "pk": "f0d460dd-dd41-48e1-b511-fd3d24901a9a",
+    "fields": {
+        "itemName": "Bread",
+        "itemPrice": "1.00"
+    }
+},
+{
+    "model": "ticketing_system.item",
+    "pk": "f68f214d-c93d-418f-bbf6-f8ddddcb15cb",
+    "fields": {
+        "itemName": "Pizza",
+        "itemPrice": "8.00"
+    }
+},
+{
+    "model": "ticketing_system.restaurant_location",
+    "pk": 1,
+    "fields": {
+        "franchiseID": "3654929b-3f47-4b72-83d7-72b36c4fd65f",
+        "restaurantID": "77549c72-eba0-4ffc-8cf6-40382709a47e",
+        "ManagerID": 1,
+        "restaurantLocation": "Milwaukee",
+        "restaurantName": "McDonald's HQ"
+    }
+},
+{
+    "model": "ticketing_system.restaurant_location",
+    "pk": 2,
+    "fields": {
+        "franchiseID": "3654929b-3f47-4b72-83d7-72b36c4fd65f",
+        "restaurantID": "3d925e1a-b676-4f8c-a91d-5ec22c2bac6e",
+        "ManagerID": 1,
+        "restaurantLocation": "New York",
+        "restaurantName": "McDonald's NY"
+    }
+},
+{
+    "model": "ticketing_system.restaurant_location",
+    "pk": 3,
+    "fields": {
+        "franchiseID": "432086d1-d0b4-45ec-ad85-50de451c362f",
+        "restaurantID": "e7de2497-bc21-4d3b-b9c5-22c1707ef9c0",
+        "ManagerID": 5,
+        "restaurantLocation": "Boston",
+        "restaurantName": "Wendy's MA"
+    }
+},
+{
+    "model": "ticketing_system.restaurant_location",
+    "pk": 4,
+    "fields": {
+        "franchiseID": "432086d1-d0b4-45ec-ad85-50de451c362f",
+        "restaurantID": "1bea4a1c-8920-4e0a-9edf-c393c8ceb3c5",
+        "ManagerID": 5,
+        "restaurantLocation": "Houston",
+        "restaurantName": "Wendy's TX"
+    }
+},
+{
+    "model": "ticketing_system.restaurant_location",
+    "pk": 5,
+    "fields": {
+        "franchiseID": "c79cd52e-197e-40aa-8d06-efa037b6dc36",
+        "restaurantID": "91ae4e5f-1b02-4a72-af16-d2e502d895f9",
+        "ManagerID": 4,
+        "restaurantLocation": "Worcester",
+        "restaurantName": "Chick-fil-a MA"
+    }
+},
+{
+    "model": "ticketing_system.restaurant_location",
+    "pk": 6,
+    "fields": {
+        "franchiseID": "c79cd52e-197e-40aa-8d06-efa037b6dc36",
+        "restaurantID": "ea4c4ac0-e78a-4e22-b250-a06e50a9102b",
+        "ManagerID": 4,
+        "restaurantLocation": "San Francisco",
+        "restaurantName": "Chick-fil-a CA"
+    }
+},
+{
+    "model": "ticketing_system.restaurant_location",
+    "pk": 7,
+    "fields": {
+        "franchiseID": "4fa9c437-13dc-40b2-9193-f6cc5120ce07",
+        "restaurantID": "528ff3ca-51ab-433d-827c-240e1a326cba",
+        "ManagerID": 3,
+        "restaurantLocation": "Hillsboro",
+        "restaurantName": "Five Guys OR"
+    }
+},
+{
+    "model": "ticketing_system.restaurant_location",
+    "pk": 8,
+    "fields": {
+        "franchiseID": "4fa9c437-13dc-40b2-9193-f6cc5120ce07",
+        "restaurantID": "253337ac-34c9-43c1-9004-6477285b6cf0",
+        "ManagerID": 3,
+        "restaurantLocation": "Seattle",
+        "restaurantName": "Five Guys WA"
+    }
+},
+{
+    "model": "ticketing_system.restaurant_location",
+    "pk": 9,
+    "fields": {
+        "franchiseID": "920709cd-8a23-4163-82d5-853d93ed2686",
+        "restaurantID": "21885063-c6d8-4e30-b2bf-b93f8c4b0785",
+        "ManagerID": 2,
+        "restaurantLocation": "Atlanta",
+        "restaurantName": "Wingstop GA"
+    }
+},
+{
+    "model": "ticketing_system.restaurant_location",
+    "pk": 10,
+    "fields": {
+        "franchiseID": "920709cd-8a23-4163-82d5-853d93ed2686",
+        "restaurantID": "844acf8e-91d0-42e2-a52b-14436fa3c562",
+        "ManagerID": 2,
+        "restaurantLocation": "Miami",
+        "restaurantName": "Wingstop FL"
+    }
+},
+{
+    "model": "ticketing_system.customer",
+    "pk": "0f4fc2b8-0095-4741-9645-74da0d20d89f",
+    "fields": {
+        "phoneNumber": 987654321,
+        "customerName": "Customer 2",
+        "gender": "F"
+    }
+},
+{
+    "model": "ticketing_system.customer",
+    "pk": "d0a5f011-4655-46a8-bd0d-68b4a30c1c16",
+    "fields": {
+        "phoneNumber": 1234567890,
+        "customerName": "Customer1",
+        "gender": "M"
+    }
+}
+]
