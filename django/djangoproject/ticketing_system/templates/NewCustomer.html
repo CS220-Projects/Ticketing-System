@@ -46,32 +46,13 @@
 </nav>
 
 <div style="width:850px; margin:20px auto;">
-    <form action="/ticketing_system/new-ticket/" method="post">
+    <form action="/ticketing_system/new-customer/" method="post">
         {% csrf_token %}
-        {{ formCustomerOnTicket }}
-        {{ formStaffOnTicket }}
-        <div style="background-color: #EBEBEB;">
-            <div class="input-group">
-                {{ formTicketItem_item0_ }}
-            </div>
-            <div class="input-group">
-                {{ formTicketItem_item1_ }}
-            </div>
-            <div class="input-group">
-                {{ formTicketItem_item2_ }}
-            </div>
-            <div class="input-group">
-                {{ formTicketItem_item3_ }}
-            </div>
-            <div class="input-group">
-                {{ formTicketItem_item4_ }}
-            </div>
-        </div>
-        {{ formTicket }}
+        {{ formCustomer }}
         <hr>
         <br>
         <div class="d-grid gap-2">
-            <input type="submit" class="btn btn-success" value="Submit Ticket!">
+            <input type="submit" class="btn btn-success" value="Add New Customer!">
         </div>
     </form>
 </div>

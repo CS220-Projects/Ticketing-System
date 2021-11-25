@@ -15,7 +15,7 @@ def indexView(request):
 
     """
     context = {}
-    return render(request, "index.html", context)
+    return render(request, "Index.html", context)
 
 
 def successView(request):
@@ -23,7 +23,7 @@ def successView(request):
 
     """
     context = {}
-    return render(request, "success.html", context)
+    return render(request, "Success.html", context)
 
 
 def NewTicketView(request):
