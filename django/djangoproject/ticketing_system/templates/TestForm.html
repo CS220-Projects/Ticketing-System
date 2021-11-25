@@ -1,5 +1,9 @@
-<form action="/TestForm/" method="post">
+<form action="/ticketing_system/test_form/" method="post">
     {% csrf_token %}
-    {{ form }}
+
+    {{ formTicket }}
+    {{ formCustomerOnTicket }}
+    {{ formStaffOnTicket }}
+
     <input type="submit" value="Submit">
 </form>
