@@ -36,6 +36,28 @@ class staffOnTicket(forms.ModelForm):
         }
 
 
+class ticketItem(forms.ModelForm):
+    """
+
+    """
+    class Meta:
+        model = Ticket_Item
+        fields = ("itemID", "quantity", "currentPrice",)
+        widgets = {
+            'itemID': Select(attrs={
+                'style': 'width: 30%; margin: 20px;',
+            }),
+            'quantity': NumberInput(attrs={
+                'class': "form-control",
+                'style': 'width: 10%; margin: 20px;',
+            }),
+            'currentPrice': NumberInput(attrs={
+                'class': "form-control",
+                'style': 'width: 10%; margin: 20px;',
+            }),
+        }
+
+
 class ticket(ModelForm):
     """
 
