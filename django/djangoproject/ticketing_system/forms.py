@@ -85,3 +85,28 @@ class ticket(ModelForm):
                 'style': 'width: 20px; height: 20px; margin: 20px;',
             }),
         }
+
+class customer(forms.ModelForm):
+    """
+
+    """
+    class Meta:
+        model = Customer
+        fields = ("phoneNumber", "customerName", "gender", )
+        widgets = {
+            'phoneNumber': NumberInput(attrs={
+                'class': "form-control",
+                'style': 'margin: 20px',
+                'placeholder': '5087937711'
+            }),
+            'customerName': TextInput(attrs={
+                'class': "form-control",
+                'style': 'margin: 20px',
+                'placeholder': 'Robert H. Goddard'
+            }),
+            'gender': TextInput(attrs={
+                'class': "form-control",
+                'style': 'margin: 20px',
+                'placeholder': 'Male'
+            }),
+        }

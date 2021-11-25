@@ -5,6 +5,7 @@ from .forms import ticket
 from .forms import customerOnTicket
 from .forms import staffOnTicket
 from .forms import ticketItem
+from .forms import customer
 
 #from .models import Status
 
@@ -108,3 +109,29 @@ def NewTicketView(request):
                    "formTicketItem_item3_": formTicketItem_item3_,
                    "formTicketItem_item4_": formTicketItem_item4_,
                    })
+
+
+def NewCustomerView(request):
+    """
+
+    """
+    # if this is a POST request we need to process the form data.
+    if request.method == 'POST':
+        #Create a form instance and populate it with data from the request:
+        formCustomer = customer(request.POST)
+
+        #Check for valid:
+        if formCustomer.is_valid():
+
+            #Process the data:
+            formCustomer = formCustomer.save()                                          #Save the ticket.
+
+            #Redirect to new URL:
+            return HttpResponseRedirect('/ticketing_system/success/')
+
+    #If a GET (or other method), create a blank form.
+    else:
+        formCustomer = customer()
+
+    return render(request, 'NewCustomer.html',
+                  {'formCustomer': formCustomer,})
