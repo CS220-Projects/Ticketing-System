@@ -32,16 +32,16 @@ class Item(models.Model):
     itemPrice = models.DecimalField(max_digits = 20, decimal_places = 2)
 
     def __str__(self):
-        return f"Item Name = {self.itemName} | Item Price = {self.itemPrice}"
+        return f"Item = {self.itemName} | Price = {self.itemPrice}"
 
 
 class Ticket(models.Model):
     ticketID = models.UUIDField(primary_key = True, default = uuid.uuid4, editable = False)
-    timeToFulfill = models.DecimalField(max_digits = 20, decimal_places = 2)
-    specialRequests = models.CharField(max_length = 500)
-    completedStatus = models.BooleanField(default = False)
-    orderDate = models.DateTimeField(auto_now = True)
-    tip = models.DecimalField(max_digits = 20, decimal_places = 2)
+    timeToFulfill = models.DecimalField(max_digits = 20, decimal_places = 2, verbose_name = "Time To Fulfill (Minutes)")
+    specialRequests = models.CharField(max_length = 500, verbose_name = "Special Requests")
+    completedStatus = models.BooleanField(default = False, verbose_name = "Order Completed")
+    orderDate = models.DateTimeField(auto_now = True, verbose_name = "Order Date")
+    tip = models.DecimalField(max_digits = 20, decimal_places = 2, verbose_name = "Tip (Percentage)")
 
     def __str__(self):
         return f"Ticket ID = {self.ticketID} | Order Date = {self.orderDate}"
@@ -52,7 +52,7 @@ class Customer_On_Ticket(models.Model):
         unique_together = (('ticketID','customerID'),)
 
     ticketID = models.ForeignKey("Ticket", null = False, on_delete = models.CASCADE, related_name = "Customer_On_Ticket")
-    customerID = models.ForeignKey("Customer", null = False, on_delete = models.CASCADE, related_name = "Customer_On_Ticket")
+    customerID = models.ForeignKey("Customer", null = False, on_delete = models.CASCADE, related_name = "Customer_On_Ticket", verbose_name = "Customer Ticket Belongs To")
 
     def __str__(self):
         return f"Ticket ID = {self.ticketID} | Customer ID = {self.customerID}"
@@ -63,7 +63,7 @@ class Staff_On_Ticket(models.Model):
         unique_together = (('ticketID','staffID'),)
 
     ticketID = models.ForeignKey("Ticket", null = False, on_delete = models.CASCADE, related_name = "Staff_On_Ticket")
-    staffID = models.ForeignKey("Staff", null = False, on_delete = models.CASCADE, related_name = "Staff_On_Ticket")
+    staffID = models.ForeignKey("Staff", null = False, on_delete = models.CASCADE, related_name = "Staff_On_Ticket", verbose_name = "Staff Member Servicing Ticket")
 
     def __str__(self):
         return f"Ticket ID = {self.ticketID} | Customer ID = {self.staffID}"
@@ -74,9 +74,9 @@ class Ticket_Item(models.Model):
         unique_together = (('ticketID','itemID'),)
 
     ticketID = models.ForeignKey("Ticket", null = False, on_delete = models.CASCADE, related_name = "Item_Ticket")
-    itemID = models.ForeignKey("Item", null = False, on_delete = models.CASCADE, related_name = "Item_Ticket")
-    currentPrice = models.DecimalField(max_digits = 20, decimal_places = 2)
-    quantity = models.IntegerField()
+    itemID = models.ForeignKey("Item", null = False, on_delete = models.CASCADE, related_name = "Item_Ticket", verbose_name = "Item", blank = True)
+    currentPrice = models.DecimalField(max_digits = 20, decimal_places = 2, verbose_name = "Current Price", blank = True)
+    quantity = models.IntegerField(verbose_name = "Quantity", blank = True)
 
     def __str__(self):
         return f"ticketID = {self.ticketID} | itemID = {self.itemID}"
@@ -97,14 +97,14 @@ class Staff(models.Model):
     staffSalary = models.DecimalField(max_digits = 20, decimal_places = 2)
 
     def __str__(self):
-        return f"Staff Name = {self.staffName}"
+        return f"{self.staffName}"
 
 
 class Customer(models.Model):
     customerID = models.UUIDField(primary_key = True, default = uuid.uuid4, editable = False)
-    phoneNumber = models.BigIntegerField()
-    customerName = models.CharField(max_length = 100)
-    gender = models.CharField(max_length = 20)
+    phoneNumber = models.BigIntegerField(verbose_name = "Customer Phone Number")
+    customerName = models.CharField(max_length = 100, verbose_name = "Customer Name")
+    gender = models.CharField(max_length = 20, verbose_name = "Customer Gender")
 
     def __str__(self):
-        return f"Customer Name = {self.customerName}"
+        return f"{self.customerName}"
