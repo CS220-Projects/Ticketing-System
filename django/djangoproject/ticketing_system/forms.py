@@ -74,7 +74,7 @@ class ticket(ModelForm):
             'specialRequests': Textarea(attrs={
                 'class': "form-control",
                 'style': 'margin: 20px',
-                'placeholder': 'Extra Sause Please'
+                'placeholder': 'Extra Sauce Please'
             }),
             'tip': NumberInput(attrs={
                 'class': "form-control",
