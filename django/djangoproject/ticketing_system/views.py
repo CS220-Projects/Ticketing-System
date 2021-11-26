@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.db import connection
 
 from .forms import ticket
 from .forms import customerOnTicket
@@ -7,15 +8,33 @@ from .forms import staffOnTicket
 from .forms import ticketItem
 from .forms import customer
 
-#from .models import Status
+from .models import Ticket
+from .models import Ticket_Item
 
 
 def indexView(request):
     """
-
+         <td>{{Ticket.orderDate}}</td>
+         <td>{{Ticket.timeToFulfill}}</td>
+         <td>{{Ticket.tip}}</td>
+         <td>{{Ticket.specialRequests}}</td>
+         <td>{{Ticket.completedStatus}}</td>
     """
-    context = {}
+    #cursor = connection.cursor()
+    #cursor.execute("SELECT * FROM ticketing_system_ticket_item")
+    #resluts = cursor.fetchall()
+    #context = {"Tickets": resluts}
+
+    context = {"Tickets": Ticket.objects.order_by('-orderDate')}
     return render(request, "Index.html", context)
+
+
+def detailsView(request):
+    """
+    """
+    ticketID = request.GET.get('ticketID', '')
+    context = {"Ticket_Item": Ticket_Item.objects.filter(ticketID = ticketID)}
+    return render(request, "Details.html", context)
 
 
 def successView(request):
@@ -26,7 +45,7 @@ def successView(request):
     return render(request, "Success.html", context)
 
 
-def NewTicketView(request):
+def newTicketView(request):
     """
 
     """
@@ -111,7 +130,7 @@ def NewTicketView(request):
                    })
 
 
-def NewCustomerView(request):
+def newCustomerView(request):
     """
 
     """
