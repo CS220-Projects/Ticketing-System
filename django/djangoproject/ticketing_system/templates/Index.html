@@ -45,7 +45,50 @@
     </div>
 </nav>
 
+<h1 class="text-center" style="margin-top: 50px">Ticketing System: Ticket Statuses</h1>
 
+<div style="table-layout: fixed; width: 95%;">
+    <table class="table table-bordered border-primary" style="margin: 25px">
+    <thead>
+        <th>Order Date</th>
+        <th>Time To Fulfill (Minutes)</th>
+        <th>Tip Percentage</th>
+        <th>Special Requests</th>
+        <th>Completed?</th>
+        <th>Customer Name</th>
+        <th>Staff Name</th>
+        <th>View Order Details</th>
+    </thead>
+        <tbody>
+        {% for Ticket in Tickets %}
+             <tr>
+                 <td>{{ Ticket.orderDate }}</td>
+                 <td>{{ Ticket.timeToFulfill }}</td>
+                 <td>{{ Ticket.tip }}</td>
+                 <td>{{ Ticket.specialRequests }}</td>
+                 <td>{{ Ticket.completedStatus }}</td>
+
+                 <td>
+                 {% for Customer_On_Ticket in Ticket.Customer_On_Ticket.all %}
+                 <p>{{ Customer_On_Ticket.customerID }}</p>
+                 {% endfor %}
+                 </td>
+
+                 <td>
+                 {% for Staff_On_Ticket in Ticket.Staff_On_Ticket.all %}
+                 <p>{{ Staff_On_Ticket.staffID }}</p>
+                 {% endfor %}
+                 </td>
+
+                 <td>
+                     <a type="button" href="./details/?ticketID={{Ticket.ticketID}}" class="btn btn-primary">View Items</a>
+                 </td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
 
 </body>
 </html>
