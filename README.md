@@ -1,6 +1,6 @@
-# Django Examples
+# Ticketing System
 
-A starter project for Clark's Databases course (CSCI 220). This project includes a web server and database.
+Ticketing System project for Clark's Databases course CSCI 220. This project includes a web server and database.
 
 Follow these steps to get started:
 
@@ -21,6 +21,8 @@ It could be time-consuming to install and configure all of these on your compute
 ## Step 2: Secure Configuration
 
 It is a terrible idea to run software with default passwords. To configure the password for the database and other settings, you will need to write them in a `.env` file. Follow these steps:
+
+### Note: A sample .env has been included for you.
 
 1. Copy `dot_env_example` to `.env`
 2. Run `chmod 600 .env` to prevent other users from reading your `.env` file
@@ -47,14 +49,35 @@ When you are done running the application, you can stop it by typing `Control-C`
 
 Follow the instructions below to run the database migrations. This will ensure the database has the schema for the applications.
 
+First, create a migration file, which describes the changes to be made:
+
+```
+docker compose exec django python manage.py makemigrations
+```
+
+Then, you apply those changes by running the migration file:
+
+```
+docker compose exec django python manage.py migrate
+```
+
+## Step 4.5: Add Test Data (If Desired)
+
+Add starter data that the applications needs via the following command:
+```
+docker compose exec django python manage.py loaddata add_restaurant_data.json
+```
+
 ## Step 5: Load the Applications
+
+Load <http://localhost:8080/ticketing_system/> and you should be redirected to the Ticketing System interface.
 
 Load <http://localhost:8080> and you should be redirected to the "Django administration" login interface. 
 
 
-## Hints
+## Other Notes:
 
-### Creating Admin Accounts
+### Creating Admin Accounts (For Django Administration Interface)
 
 To create a superuser, which can access the Django admin interface:
 
@@ -81,24 +104,7 @@ To interactively run SQL commands, run:
 
 When you edit Django models, the changes don't take effect until you update the database. This is done in two steps.
 
-First, you create a migration file, which describes the changes to be made:
-
-```
-docker compose exec django python manage.py makemigrations
-```
-
-Then, you apply those changes by running the migration file:
-
-```
-docker compose exec django python manage.py migrate
-```
-
 You can read more about [Django migrations here](https://docs.djangoproject.com/en/3.2/topics/migrations/).
-
-Add starter data that the applications needs via the following command:
-```
-docker compose exec django python manage.py loaddata add_restaurant_data.json
-```
 
 #### Dump
 
