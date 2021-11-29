@@ -13,6 +13,43 @@
             integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
             crossorigin="anonymous"></script>
 
+    <!--    Google jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script type="text/javascript" defer>
+        $(document).ready(function() {
+            $('#id__item0_-itemID').change();
+            $('#id__item0_-itemID').on('change', function() {
+                let Price = ($('#id__item0_-itemID option:selected').text())
+                $('#id__item0_-currentPrice').val(Price.substr(Price.indexOf("|") + 10));
+            });
+
+            $('#id__item1_-itemID').change();
+            $('#id__item1_-itemID').on('change', function() {
+                let Price = ($('#id__item1_-itemID option:selected').text())
+                $('#id__item1_-currentPrice').val(Price.substr(Price.indexOf("|") + 10));
+            });
+
+            $('#id__item2_-itemID').change();
+            $('#id__item2_-itemID').on('change', function() {
+                let Price = ($('#id__item2_-itemID option:selected').text())
+                $('#id__item2_-currentPrice').val(Price.substr(Price.indexOf("|") + 10));
+            });
+
+            $('#id__item3_-itemID').change();
+            $('#id__item3_-itemID').on('change', function() {
+                let Price = ($('#id__item3_-itemID option:selected').text())
+                $('#id__item3_-currentPrice').val(Price.substr(Price.indexOf("|") + 10));
+            });
+
+            $('#id__item4_-itemID').change();
+            $('#id__item4_-itemID').on('change', function() {
+                let Price = ($('#id__item4_-itemID option:selected').text())
+                $('#id__item4_-currentPrice').val(Price.substr(Price.indexOf("|") + 10));
+            });
+        });
+    </script>
+
     <base href="http://localhost:8080/ticketing_system/">
 </head>
 <body>
