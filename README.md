@@ -65,7 +65,7 @@ docker compose exec django python manage.py migrate
 
 Add starter data that the applications needs via the following command:
 ```
-docker compose exec django python manage.py loaddata add_restaurant_data.json
+docker compose exec django python manage.py loaddata add_test_data.json
 ```
 
 ## Step 5: Load the Applications
